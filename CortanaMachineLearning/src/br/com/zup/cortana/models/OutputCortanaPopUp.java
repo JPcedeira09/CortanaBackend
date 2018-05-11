@@ -1,7 +1,5 @@
 package br.com.zup.cortana.models;
 
-import java.math.BigDecimal;
-
 import com.google.gson.Gson;
 
 public class OutputCortanaPopUp {
@@ -10,9 +8,9 @@ public class OutputCortanaPopUp {
 	private String nome;
 	private String conta;
 	private String mes; 
-	private BigDecimal saldoMesAnterior;
-	private BigDecimal recebimentoMes;
-	private BigDecimal gastosMes;
+	private Integer saldoMesAnterior;
+	private Integer recebimentoMes;
+	private Integer gastosMes;
 		
 	public OutputCortanaPopUp() {
 		super();
@@ -42,27 +40,27 @@ public class OutputCortanaPopUp {
 		this.mes = mes;
 	}
 
-	public BigDecimal getSaldoMesAnterior() {
+	public Integer getSaldoMesAnterior() {
 		return saldoMesAnterior;
 	}
 
-	public void setSaldoMesAnterior(BigDecimal saldoMesAnterior) {
+	public void setSaldoMesAnterior(Integer saldoMesAnterior) {
 		this.saldoMesAnterior = saldoMesAnterior;
 	}
 
-	public BigDecimal getRecebimentoMes() {
+	public Integer getRecebimentoMes() {
 		return recebimentoMes;
 	}
 
-	public void setRecebimentoMes(BigDecimal recebimentoMes) {
+	public void setRecebimentoMes(Integer recebimentoMes) {
 		this.recebimentoMes = recebimentoMes;
 	}
 
-	public BigDecimal getGastosMes() {
+	public Integer getGastosMes() {
 		return gastosMes;
 	}
 
-	public void setGastosMes(BigDecimal gastosMes) {
+	public void setGastosMes(Integer gastosMes) {
 		this.gastosMes = gastosMes;
 	}	
 
@@ -70,8 +68,8 @@ public class OutputCortanaPopUp {
 		return new Gson().toJson(this);
 	}
 		
-	public OutputCortanaPopUp(String nome, String conta, String mes, BigDecimal saldoMesAnterior,
-			BigDecimal recebimentoMes, BigDecimal gastosMes) {
+	public OutputCortanaPopUp(String nome, String conta, String mes, Integer saldoMesAnterior,
+			Integer recebimentoMes, Integer gastosMes) {
 		super();
 		this.nome = nome;
 		this.conta = conta;
@@ -81,8 +79,4 @@ public class OutputCortanaPopUp {
 		this.gastosMes = gastosMes;
 	}
 
-	public static void main(String[] args) {
-		OutputCortanaPopUp outputCortanaPopUp = new OutputCortanaPopUp("João Paulo", "123456", "12", new BigDecimal(-200.00), new BigDecimal(800.00), new BigDecimal(700.00));
-		System.out.println(outputCortanaPopUp.toJSON());
-	}
 }

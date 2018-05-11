@@ -10,7 +10,6 @@ import java.util.List;
 import br.com.zup.cortana.models.Input1Gastos;
 import br.com.zup.utils.ConnectionFactory;
 
-
 public class MachineDAOGastos implements MachineDAO{
 
 	private Connection connection; 
@@ -96,7 +95,6 @@ public class MachineDAOGastos implements MachineDAO{
 	public static void main(String[] args) {
 		MachineDAOGastos machineDAOGastos = new MachineDAOGastos();
 		machineDAOGastos.getDBhistoco("10010479");
-
 	}
 
 }
