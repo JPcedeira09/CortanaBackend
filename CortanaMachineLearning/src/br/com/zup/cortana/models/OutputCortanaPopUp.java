@@ -8,9 +8,9 @@ public class OutputCortanaPopUp {
 	private String nome;
 	private String conta;
 	private String mes; 
-	private Integer saldoMesAnterior;
-	private Integer recebimentoMes;
-	private Integer gastosMes;
+	private Long saldoMesAnterior;
+	private Long recebimentoMes;
+	private Long gastosMes;
 		
 	public OutputCortanaPopUp() {
 		super();
@@ -40,27 +40,27 @@ public class OutputCortanaPopUp {
 		this.mes = mes;
 	}
 
-	public Integer getSaldoMesAnterior() {
+	public Long getSaldoMesAnterior() {
 		return saldoMesAnterior;
 	}
 
-	public void setSaldoMesAnterior(Integer saldoMesAnterior) {
+	public void setSaldoMesAnterior(Long saldoMesAnterior) {
 		this.saldoMesAnterior = saldoMesAnterior;
 	}
 
-	public Integer getRecebimentoMes() {
+	public Long getRecebimentoMes() {
 		return recebimentoMes;
 	}
 
-	public void setRecebimentoMes(Integer recebimentoMes) {
+	public void setRecebimentoMes(Long recebimentoMes) {
 		this.recebimentoMes = recebimentoMes;
 	}
 
-	public Integer getGastosMes() {
+	public Long getGastosMes() {
 		return gastosMes;
 	}
 
-	public void setGastosMes(Integer gastosMes) {
+	public void setGastosMes(Long gastosMes) {
 		this.gastosMes = gastosMes;
 	}	
 
@@ -68,8 +68,8 @@ public class OutputCortanaPopUp {
 		return new Gson().toJson(this);
 	}
 		
-	public OutputCortanaPopUp(String nome, String conta, String mes, Integer saldoMesAnterior,
-			Integer recebimentoMes, Integer gastosMes) {
+	public OutputCortanaPopUp(String nome, String conta, String mes, Long saldoMesAnterior,
+			Long recebimentoMes, Long gastosMes) {
 		super();
 		this.nome = nome;
 		this.conta = conta;

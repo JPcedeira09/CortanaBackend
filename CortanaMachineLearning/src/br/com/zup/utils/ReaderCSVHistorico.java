@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,7 +14,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.com.zup.models.novo.HistoricoBancario;
+import br.com.zup.models.HistoricoBancario;
 
 /**
  * 
@@ -24,6 +23,11 @@ import br.com.zup.models.novo.HistoricoBancario;
  */
 public class ReaderCSVHistorico {
 
+	private EntityManager manager;
+	
+	public ReaderCSVHistorico() {
+		this.manager =  ConnectionFactoryJPA.getEntityManager();
+	}
 
 	/**
 	 * 
@@ -31,24 +35,23 @@ public class ReaderCSVHistorico {
 	 * Teste para ver se foi inserido os dados do CSV.
 	 */
 	public static void main(String[] args) {
-		createMongoDB();
+		ReaderCSVHistorico readerCSVHistorico = new ReaderCSVHistorico();
+		readerCSVHistorico.createDBHist();
 	}
 
 	/**
 	 * @return Banco local Criado
 	 */
-	public static void createMongoDB() {
-		EntityManager em = new ConnectionFactoryJPA().getEntityManager();
-		ReaderCSVHistorico csv = new ReaderCSVHistorico();
-		em.getTransaction().begin();
-		List<HistoricoBancario> dataset = csv.reader_csv_saving();
+	public void createDBHist() {
+				
+		manager.getTransaction().begin();
+		List<HistoricoBancario> dataset = reader_csv_saving();
 		for(HistoricoBancario hist : dataset) {
 			//System.out.println(hist.toString());
-			em.persist(hist);
+			manager.persist(hist);
 		}
-		em.getTransaction().commit();
-		em.close();
-
+		manager.getTransaction().commit();
+		manager.close();
 	}
 
 
@@ -56,7 +59,7 @@ public class ReaderCSVHistorico {
 	 * @return List<String>
 	 * Leitor do arquivo CVS local
 	 */
-	public List<HistoricoBancario> reader_csv_saving() {
+	public static List<HistoricoBancario> reader_csv_saving() {
 		String arquivoCSV = "TMP_HIST_AMOSTRA_LANCTO_2.csv";
 		BufferedReader br = null;
 		String linha = "";
@@ -82,7 +85,7 @@ public class ReaderCSVHistorico {
 				hist.setNr_seq_lancamento(data[3] != null ? data[3] : "");
 				hist.setNr_ptenv(data[4] != null ? data[4] : "");
 				hist.setCd_lancamento(data[5] != null ? data[5] : "");
-				hist.setVr_lancamento(data[6] != null ? new BigDecimal(data[6]) : new BigDecimal(0.000));
+				hist.setVr_lancamento(data[6] != null ? Long.getLong(data[6]) : (long) 0.000);
 				hist.setDt_contabil(data[7] != null ? converter(data[7]) : Calendar.getInstance());
 				hist.setDt_lancamento(data[8] != null ? converter(data[8]) : Calendar.getInstance());
 				hist.setTp_lancamento(data[9] != null ? data[9] : "");

@@ -2,8 +2,9 @@ package br.com.zup.controller.db;
 
 import java.util.List;
 
-import br.com.zup.controller.MLCreateDataSets;
+import br.com.zup.controller.db.dao.MLCreateDataSets;
 import br.com.zup.cortana.interfaces.db.ControllerDatasets;
+import br.com.zup.cortana.models.LancamentosQuinzenais;
 
 public class LancamentosQuinzenaisController implements ControllerDatasets<LancamentosQuinzenais, String> {
 

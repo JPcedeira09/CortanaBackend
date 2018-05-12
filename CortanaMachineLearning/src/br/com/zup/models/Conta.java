@@ -1,4 +1,4 @@
-package br.com.zup.models.novo;
+package br.com.zup.models;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -24,6 +24,7 @@ public class Conta {
 	private String banco; 
 	private String agencia;
 	private String numero;
+	
 	public Integer getID() {
 		return ID;
 	}

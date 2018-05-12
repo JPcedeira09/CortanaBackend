@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.com.zup.controller.CRUDImplementacao;
-import br.com.zup.models.novo.Conta;
+import br.com.zup.controller.db.dao.CRUDImplementacao;
+import br.com.zup.models.Conta;
 
 public class ContaDAO extends CRUDImplementacao<Conta, Integer> {
 

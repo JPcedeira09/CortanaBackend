@@ -1,4 +1,4 @@
-package br.com.zup.models.novo;
+package br.com.zup.models;
 
 import java.util.HashMap;
 import java.util.Map;

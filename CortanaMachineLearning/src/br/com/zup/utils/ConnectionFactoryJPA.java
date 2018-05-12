@@ -12,7 +12,7 @@ public class ConnectionFactoryJPA {
 	
 	@Produces 
 	@RequestScoped
-	public  EntityManager getEntityManager() {
+	public static EntityManager getEntityManager() {
 		return factory.createEntityManager();
 	}
 	

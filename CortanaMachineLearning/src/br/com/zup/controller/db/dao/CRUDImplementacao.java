@@ -1,4 +1,4 @@
-package br.com.zup.controller;
+package br.com.zup.controller.db.dao;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package br.com.zup.controller.db;
+package br.com.zup.cortana.models;
 
 import java.math.BigDecimal;
 

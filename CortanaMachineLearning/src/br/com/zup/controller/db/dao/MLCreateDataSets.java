@@ -1,4 +1,4 @@
-package br.com.zup.controller;
+package br.com.zup.controller.db.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.zup.controller.db.LancamentosQuinzenais;
-import br.com.zup.models.novo.LancamentosSemanais;
+import br.com.zup.cortana.models.LancamentosQuinzenais;
+import br.com.zup.models.LancamentosSemanais;
 import br.com.zup.utils.ConnectionFactory;
 
 

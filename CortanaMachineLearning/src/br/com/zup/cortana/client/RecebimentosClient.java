@@ -1,7 +1,7 @@
 package br.com.zup.cortana.client;
 
-import br.com.zup.controller.db.MachineDAO;
-import br.com.zup.controller.db.MachineDAORecebimentos;
+import br.com.zup.controller.db.dao.MachineDAORecebimentos;
+import br.com.zup.cortana.interfaces.db.MachineDAO;
 
 public class RecebimentosClient extends CortanaClient{
 
@@ -15,9 +15,8 @@ public class RecebimentosClient extends CortanaClient{
 	public String postCortana(String conta) {
 
 		String inputGastos = this.daoR.getDBhistoco(conta);
-	    System.out.println("---------------------------RETORNO PARA O IMPUTS-----------------------------------------------------------");
+	    System.out.println("---------------------------RETORNO PARA O IMPUTS  PARA POST----------------------------------------------------------- \n");
 		System.out.println(inputGastos);
-	    System.out.println("---------------------------------------------------------------------------------------");
 		return inputGastos;
 	}
 

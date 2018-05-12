@@ -1,4 +1,4 @@
-package br.com.zup.models.novo;
+package br.com.zup.models.enums;
 
 public enum TipoOp {
 	

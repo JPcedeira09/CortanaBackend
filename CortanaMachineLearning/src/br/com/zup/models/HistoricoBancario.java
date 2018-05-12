@@ -1,6 +1,5 @@
-package br.com.zup.models.novo;
+package br.com.zup.models;
 
-import java.math.BigDecimal;
 import java.util.Calendar;
 
 import javax.persistence.Column;
@@ -20,7 +19,7 @@ public class HistoricoBancario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name= "id_transacao")
-	private Integer ID;
+	private Long ID;
 	
 	private String cd_unorg_agen;
 	private String nr_cnta_crrt;
@@ -28,7 +27,7 @@ public class HistoricoBancario {
 	private String nr_seq_lancamento;	
 	private String nr_ptenv;
 	private String cd_lancamento;	
-	private BigDecimal vr_lancamento;	
+	private Long vr_lancamento;	
 	private String tp_lancamento;
 	private String tp_debito;
 	private String cd_tipo_ptenv;	
@@ -43,10 +42,10 @@ public class HistoricoBancario {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar dt_carga;
 	
-	public Integer getID() {
+	public Long getID() {
 		return ID;
 	}
-	public void setID(Integer iD) {
+	public void setID(Long iD) {
 		ID = iD;
 	}
 	public String getCd_unorg_agen() {
@@ -85,10 +84,10 @@ public class HistoricoBancario {
 	public void setCd_lancamento(String cd_lancamento) {
 		this.cd_lancamento = cd_lancamento;
 	}
-	public BigDecimal getVr_lancamento() {
+	public Long getVr_lancamento() {
 		return vr_lancamento;
 	}
-	public void setVr_lancamento(BigDecimal vr_lancamento) {
+	public void setVr_lancamento(Long vr_lancamento) {
 		this.vr_lancamento = vr_lancamento;
 	}
 	public Calendar getDt_contabil() {
