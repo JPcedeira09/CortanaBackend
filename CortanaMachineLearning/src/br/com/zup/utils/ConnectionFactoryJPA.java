@@ -6,6 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.springframework.stereotype.Repository;
+
+
+@Repository
 public class ConnectionFactoryJPA {
 
 	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("cortana");
@@ -16,7 +20,7 @@ public class ConnectionFactoryJPA {
 		return factory.createEntityManager();
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(ConnectionFactoryJPA.getEntityManager());
-	}
+	}*/
 }

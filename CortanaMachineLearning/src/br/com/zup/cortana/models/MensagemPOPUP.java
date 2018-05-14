@@ -1,15 +1,26 @@
 package br.com.zup.cortana.models;
 
-import javax.ejb.Stateless;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.google.gson.Gson;
 
-@Stateless
+
+@Entity
+@Table(name= "tb_msg_pop")
 public class MensagemPOPUP {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
 	private String msg;
 	private Long predictGasto;
 	private Long predictRecebimentos;
+
 	public String getMsg() {
 		return msg;
 	}

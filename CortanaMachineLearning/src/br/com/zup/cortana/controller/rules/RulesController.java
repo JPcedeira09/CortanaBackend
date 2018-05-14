@@ -10,6 +10,9 @@ import java.net.URL;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -20,28 +23,43 @@ import br.com.zup.cortana.controller.popUp.PopUpEstavel;
 import br.com.zup.cortana.controller.popUp.PopUpNegativo;
 import br.com.zup.cortana.controller.popUp.PopUpPositivo;
 import br.com.zup.cortana.interfaces.db.RulesPopUp;
-import br.com.zup.cortana.interfaces.service.PopUp;
 import br.com.zup.cortana.models.MensagemPOPUP;
 import br.com.zup.cortana.models.OutputCortanaPopUp;
 import br.com.zup.models.ResultJSON;
 
+@Repository
 public class RulesController implements RulesPopUp{
 
-	private PopUp popUp;
+	@Autowired
+	private PopUpEstavel estavelPopup;
+	@Autowired
+	private PopUpCobre cobrePopup;
+	@Autowired
+	private PopUpPositivo positivoPopup;
+	@Autowired
+	private PopUpNegativo negativoPopup;
+	@Autowired
+	private GastosClient gastosClient;
+	@Autowired
+	private RecebimentosClient recebimentosClient;
 	
+	public RulesController() {
+		System.out.println("INFO: RULES CONTROLLER.");
+	}
+		
 	@PostConstruct
 	private void init() {
 		System.out.println("INFO:Começou a usar o RulesControllerPositive.");
 	}
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		RulesController rulesController = new RulesController();
 		System.out.println("---------------------------------------------------------------------------------------");
 		rulesController.postGastosResult("10010479");
 		rulesController.postRecebimentosResult("10010479");
-	}
+	}*/
 	
-	public static Long postGastosResult(String conta) {
+	public Long postGastosResult(String conta) {
 
 		try {
 			URL url = new URL("https://ussouthcentral.services.azureml.net/workspaces/36c116b8d1d94afda891fa44ab452961/services/666aa98646b04499bd07707e950c70d9/execute?api-version=2.0&format=swagger");
@@ -53,8 +71,7 @@ public class RulesController implements RulesPopUp{
 			conn.setRequestProperty("Accept", "application/json");
 			conn.setRequestProperty("Authorization", "Bearer 25Ux2TjsQ1wcnZ9VTq9LabexB7Z0aqpp5Sk1GE/tnhYjf2x5qnyuNctx6F9hQ3lKAVfo3vu3BCWn0BUqChmWOQ==");
 
-			GastosClient gastosClient = new GastosClient();
-			String postCortana = gastosClient .postCortana(conta);	
+			String postCortana = gastosClient.postCortana(conta);	
 			OutputStream os = conn.getOutputStream();
 			os.write(postCortana.getBytes());
 			os.flush();
@@ -87,7 +104,7 @@ public class RulesController implements RulesPopUp{
 		}
 	}
 
-	public static Long postRecebimentosResult(String conta) {
+	public Long postRecebimentosResult(String conta) {
 
 		try {
 			URL url = new URL("https://ussouthcentral.services.azureml.net/workspaces/36c116b8d1d94afda891fa44ab452961/services/55d9d1f69a0a4831b165bba029cda7b9/execute?api-version=2.0&format=swagger");
@@ -99,7 +116,6 @@ public class RulesController implements RulesPopUp{
 			conn.setRequestProperty("Accept", "application/json");
 			conn.setRequestProperty("Authorization", "Bearer QV8sfSYAztmhx6l6XP5+qGUxzQYmXvTOo8ln7AaB1F3sKrW05zCYzaUxYrOx/27AEljBUYGLJTuuyB5pBcGuew==");
 
-			RecebimentosClient recebimentosClient = new RecebimentosClient();
 			String postCortana = recebimentosClient.postCortana(conta);	
 			OutputStream os = conn.getOutputStream();
 			os.write(postCortana.getBytes());
@@ -133,7 +149,7 @@ public class RulesController implements RulesPopUp{
 			return (long) 0;
 		}
 	}
-
+	
 	@Override
 	public MensagemPOPUP showRules(OutputCortanaPopUp outputCortana) {
 		System.out.println();
@@ -158,30 +174,30 @@ public class RulesController implements RulesPopUp{
 		Long saldoMesAnterior = outputCortana.getSaldoMesAnterior();
 
 		if (predictRecebimentoMes.doubleValue() > predictGastosMes.doubleValue() && saldoMesAnterior.doubleValue() > 0 ) {
-			this.popUp = new PopUpPositivo();
 
-			mensagemPOPUP.setMsg(popUp.showPopUp(outputCortana));
+			mensagemPOPUP.setMsg(positivoPopup.showPopUp(outputCortana));
 			System.out.println(mensagemPOPUP.toJSON());
 			return mensagemPOPUP;
 		}
 
 		else if (predictRecebimentoMes.doubleValue() < predictGastosMes.doubleValue() && saldoMesAnterior.doubleValue() < 0 ) {
-			this.popUp = new PopUpNegativo();
-			mensagemPOPUP.setMsg(popUp.showPopUp(outputCortana));
+					
+			mensagemPOPUP.setMsg(negativoPopup.showPopUp(outputCortana));
 			System.out.println(mensagemPOPUP.toJSON());
 			return mensagemPOPUP;
 			}
 
 		else if (predictRecebimentoMes.doubleValue() > predictGastosMes.doubleValue() && saldoMesAnterior.doubleValue() < 0 ) {
-			this.popUp = new PopUpCobre();
-			mensagemPOPUP.setMsg(popUp.showPopUp(outputCortana));
+
+			mensagemPOPUP.setMsg(cobrePopup.showPopUp(outputCortana));
 			System.out.println(mensagemPOPUP.toJSON());
 			return mensagemPOPUP;
 			}
 
 		else if (predictRecebimentoMes.doubleValue() < predictGastosMes.doubleValue() && saldoMesAnterior.doubleValue() > 0 ) {
-			this.popUp = new PopUpEstavel();
-			mensagemPOPUP.setMsg(popUp.showPopUp(outputCortana));
+			
+			
+			mensagemPOPUP.setMsg(estavelPopup.showPopUp(outputCortana));
 			mensagemPOPUP.setPredictGasto(predictGastosMes);
 			mensagemPOPUP.setPredictRecebimentos(predictRecebimentoMes);
 			System.out.println(mensagemPOPUP.toJSON());

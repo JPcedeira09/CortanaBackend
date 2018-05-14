@@ -1,8 +1,11 @@
 package br.com.zup.cortana.controller.popUp;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.zup.cortana.interfaces.service.PopUp;
 import br.com.zup.cortana.models.OutputCortanaPopUp;
 
+@Repository
 public class PopUpCobre implements PopUp {
 
 	String MENSAGEMCOBRE = " Parece que no mês que vem suas contas voltam ao normal. "

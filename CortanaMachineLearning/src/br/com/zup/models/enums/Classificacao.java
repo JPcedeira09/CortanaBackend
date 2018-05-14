@@ -1,4 +1,4 @@
-package br.com.zup.cortana.models;
+package br.com.zup.models.enums;
 
 public enum Classificacao {
 

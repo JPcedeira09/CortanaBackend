@@ -7,14 +7,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.zup.cortana.interfaces.db.MachineDAO;
 import br.com.zup.cortana.models.Input1Recebimentos;
 import br.com.zup.utils.ConnectionFactory;
 
+@Repository
 public class MachineDAORecebimentos implements MachineDAO{
 
-	private Connection connection; 
-
+	private Connection connection;
+	
 	public MachineDAORecebimentos() {
 		this.connection = ConnectionFactory.getConnection();
 	}
@@ -35,7 +38,7 @@ public class MachineDAORecebimentos implements MachineDAO{
 		try {
 
 			// QUERY PARA RECEBIMENTOS
-			PreparedStatement statement = this.connection.prepareStatement(queryRecebimentos);
+			PreparedStatement statement = connection.prepareStatement(queryRecebimentos);
 			statement.setString(1, conta);
 			ResultSet set = statement.executeQuery();
 			while(set.next()) {
@@ -70,9 +73,9 @@ public class MachineDAORecebimentos implements MachineDAO{
 		return string;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		MachineDAORecebimentos machineDAOGastos = new MachineDAORecebimentos();
 		machineDAOGastos.getDBhistoco("10010479");
-	}
+	}*/
 	
 }

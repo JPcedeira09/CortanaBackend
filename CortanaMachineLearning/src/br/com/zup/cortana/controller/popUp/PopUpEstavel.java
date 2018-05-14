@@ -1,8 +1,11 @@
 package br.com.zup.cortana.controller.popUp;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.zup.cortana.interfaces.service.PopUp;
 import br.com.zup.cortana.models.OutputCortanaPopUp;
 
+@Repository
 public class PopUpEstavel implements PopUp {
 
 	String MENSAGEMESTAVEL = " Parece que no você tem chances de entrar no vermelho esse mês. "

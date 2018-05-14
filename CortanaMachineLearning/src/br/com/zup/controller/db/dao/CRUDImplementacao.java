@@ -9,14 +9,14 @@ import br.com.zup.cortana.interfaces.db.CRUDJPA;
 public class CRUDImplementacao <T,K> implements CRUDJPA<T, K>{
 
 	private EntityManager em ;
-	private Class< T > clazz;
+	private Class<T> clazz;
 
 	// para objetivos de utilizar em cima apenas do hibernate;
 	// Session session = em.unwrap(Session.class);
 
-	public CRUDImplementacao(Class< T > clazzToSet, EntityManager manager) {
-		this.em = manager;
+	public CRUDImplementacao(Class< T > clazzToSet,EntityManager em) {
 		this.clazz = clazzToSet;
+		this.em = em;
 	}
 
 	@Override

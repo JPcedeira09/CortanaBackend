@@ -6,17 +6,19 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.zup.cortana.interfaces.db.MachineDAO;
 import br.com.zup.cortana.models.Input1Gastos;
 import br.com.zup.utils.ConnectionFactoryJPA;
 
+@Repository
 public class MachineDAOGastos implements MachineDAO{
 
-
 	private EntityManager manager;
-	
+
 	public MachineDAOGastos() {
-		this.manager =  ConnectionFactoryJPA.getEntityManager();
+		this.manager = ConnectionFactoryJPA.getEntityManager();
 	}
 
 	@Override
@@ -26,18 +28,18 @@ public class MachineDAOGastos implements MachineDAO{
 		Input1Gastos input1Gastos = new Input1Gastos(); 
 		List<Long> LongsG = new ArrayList<Long>();
 		List<Long> LongsR = new ArrayList<Long>();
-		
+
 		/* 
 		 * Bloco que usa JPA para pegar os gastos do cliente
 		 */
 		String jpqlGastos = "select sum(h.vr_lancamento) from HistoricoBancario h where h.nr_cnta_crrt = :nr_cnta_crrt and h.tp_lancamento = :tp_lancamento "
 				+ " group by  year(h.dt_carga), month(h.dt_carga), h.nr_cnta_crrt  "
 				+ "order by  h.dt_carga DESC";
-		
+
 		System.out.println("======= Result JPA Gasto =========");
-		  TypedQuery<Long> queryG = manager.createQuery(jpqlGastos, Long.class)
-				 .setParameter("nr_cnta_crrt", conta)
-				 .setParameter("tp_lancamento", "D").setMaxResults(7);
+		TypedQuery<Long> queryG = manager.createQuery(jpqlGastos, Long.class)
+				.setParameter("nr_cnta_crrt", conta)
+				.setParameter("tp_lancamento", "D").setMaxResults(7);
 		System.out.println(queryG.getResultList()+ " \n");
 		LongsG = queryG.getResultList();
 
@@ -47,15 +49,15 @@ public class MachineDAOGastos implements MachineDAO{
 		String jpqlRecebimentos = "select sum(h.vr_lancamento) from HistoricoBancario h where h.nr_cnta_crrt = :nr_cnta_crrt and h.tp_lancamento = :tp_lancamento "
 				+ " group by  year(h.dt_carga), month(h.dt_carga), h.nr_cnta_crrt  "
 				+ "order by  h.dt_carga DESC";
-		
+
 		System.out.println("======= Result JPA Recebimentos =========");
-		  TypedQuery<Long> queryR = manager.createQuery(jpqlRecebimentos, Long.class)
-				 .setParameter("nr_cnta_crrt", conta)
-				 .setParameter("tp_lancamento", "H").setMaxResults(4);
+		TypedQuery<Long> queryR = manager.createQuery(jpqlRecebimentos, Long.class)
+				.setParameter("nr_cnta_crrt", conta)
+				.setParameter("tp_lancamento", "H").setMaxResults(4);
 		System.out.println(queryR.getResultList() + " \n");
 		LongsR = queryR.getResultList();
-		
-	
+
+
 		input1Gastos.setValor_gasto_mes(LongsG.get(0));
 		input1Gastos.setValor_gasto_mes_anterior(LongsG.get(1));
 		input1Gastos.setValor_gasto_mes2(LongsG.get(2));
@@ -73,14 +75,15 @@ public class MachineDAOGastos implements MachineDAO{
 		System.out.println("-------------------------------------JSON INPUT1 TO STRING-------------------------------------------- \n ");
 		System.out.println(input1.toString());
 		String string = input1.toString();
-		
+
 		return string;
 	}
 
+	/*
 	public static void main(String[] args) {
 		MachineDAOGastos machineDAOGastos = new MachineDAOGastos();
 		machineDAOGastos.getDBhistoco("10010479");
-	}
+	}*/
 
 }
 
@@ -128,5 +131,5 @@ try {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
 }
-*/
+ */
 

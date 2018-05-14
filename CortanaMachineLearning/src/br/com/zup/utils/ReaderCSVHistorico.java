@@ -14,43 +14,38 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.zup.models.HistoricoBancario;
 
 /**
  * 
- * @author joaopaulo tieles
+ * @author joaopaulotieles
  *
  */
+@Repository
 public class ReaderCSVHistorico {
 
 	private EntityManager manager;
-	
-	public ReaderCSVHistorico() {
-		this.manager =  ConnectionFactoryJPA.getEntityManager();
-	}
 
-	/**
-	 * 
-	 * @param args
-	 * Teste para ver se foi inserido os dados do CSV.
-	 */
-	public static void main(String[] args) {
-		ReaderCSVHistorico readerCSVHistorico = new ReaderCSVHistorico();
-		readerCSVHistorico.createDBHist();
+	public ReaderCSVHistorico() {
+		this.manager = ConnectionFactoryJPA.getEntityManager();
 	}
 
 	/**
 	 * @return Banco local Criado
 	 */
 	public void createDBHist() {
-				
+
 		manager.getTransaction().begin();
 		List<HistoricoBancario> dataset = reader_csv_saving();
+
 		for(HistoricoBancario hist : dataset) {
-			//System.out.println(hist.toString());
 			manager.persist(hist);
 		}
+
 		manager.getTransaction().commit();
+		System.out.println("INFO:Operação comitada.");
 		manager.close();
 	}
 
@@ -59,7 +54,7 @@ public class ReaderCSVHistorico {
 	 * @return List<String>
 	 * Leitor do arquivo CVS local
 	 */
-	public static List<HistoricoBancario> reader_csv_saving() {
+	public  List<HistoricoBancario> reader_csv_saving() {
 		String arquivoCSV = "TMP_HIST_AMOSTRA_LANCTO_2.csv";
 		BufferedReader br = null;
 		String linha = "";
@@ -69,7 +64,6 @@ public class ReaderCSVHistorico {
 
 		int i = 0 ;
 		System.out.println("Rodando leitor...");
-
 		try {
 
 			br = new BufferedReader(new FileReader(arquivoCSV));
@@ -125,25 +119,25 @@ public class ReaderCSVHistorico {
 	}
 
 	public static Calendar converter(String stringDate) {
-	    if (stringDate == null) {
-	      return null;
-	    }
-	    Calendar calendar = new GregorianCalendar();
-	    try {
-	      Timestamp newDate = Timestamp.valueOf(stringDate);
-	      calendar.setTime(newDate);
-	    }
-	    catch (Exception e) {
-	      SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-	      try {
-	        calendar.setTime(simpleDateFormat.parse(stringDate));
-	      }
-	      catch (ParseException pe) {
-	        calendar = null;
-	      }
-	    }
-	    return calendar;
-	  }
+		if (stringDate == null) {
+			return null;
+		}
+		Calendar calendar = new GregorianCalendar();
+		try {
+			Timestamp newDate = Timestamp.valueOf(stringDate);
+			calendar.setTime(newDate);
+		}
+		catch (Exception e) {
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			try {
+				calendar.setTime(simpleDateFormat.parse(stringDate));
+			}
+			catch (ParseException pe) {
+				calendar = null;
+			}
+		}
+		return calendar;
+	}
 
 	/*
 	public void reader_nextRecordset() {

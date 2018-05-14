@@ -7,20 +7,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.zup.cortana.models.LancamentosQuinzenais;
 import br.com.zup.models.LancamentosSemanais;
 import br.com.zup.utils.ConnectionFactory;
 
 
+@Repository
 public class MLCreateDataSets {
 
 	private Connection connection; 
 
 	public  MLCreateDataSets() {
 		this.connection = ConnectionFactory.getConnection();
-		System.out.println(this.connection);
+		System.out.println(connection.toString());
 	}
-
 	public List<LancamentosSemanais> geradorGanhosSemanais(String nr_cnta_crrt) {
 
 		List<LancamentosSemanais> historicoList = new ArrayList<LancamentosSemanais>();
@@ -42,7 +44,7 @@ public class MLCreateDataSets {
 				"GROUP BY  year(Y.dt_carga),MONTH(Y.dt_carga), Y.nr_cnta_crrt ";
 
 		try {
-			PreparedStatement statement = this.connection.prepareStatement(query);
+			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setString(1, nr_cnta_crrt);
 			ResultSet set = statement.executeQuery();
 
@@ -91,7 +93,7 @@ public class MLCreateDataSets {
 				"GROUP BY year(Y.dt_carga), MONTH(Y.dt_carga), Y.nr_cnta_crrt";
 
 		try {
-			PreparedStatement statement = this.connection.prepareStatement(query);
+			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setString(1, nr_cnta_crrt);
 			ResultSet set = statement.executeQuery();
 

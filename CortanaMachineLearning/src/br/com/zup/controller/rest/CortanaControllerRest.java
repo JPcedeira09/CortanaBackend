@@ -2,6 +2,9 @@ package br.com.zup.controller.rest;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.zup.controller.db.LancamentosQuinzenaisController;
 import br.com.zup.controller.db.LancamentosSemanaisController;
+import br.com.zup.controller.db.startup.BaseHistoricoStartup;
 import br.com.zup.cortana.controller.rules.RulesController;
-import br.com.zup.cortana.interfaces.db.ControllerDatasets;
-import br.com.zup.cortana.interfaces.db.RulesPopUp;
 import br.com.zup.cortana.models.LancamentosQuinzenais;
 import br.com.zup.cortana.models.MensagemPOPUP;
 import br.com.zup.cortana.models.OutputCortanaPopUp;
@@ -27,18 +29,22 @@ import br.com.zup.models.LancamentosSemanais;
 @RequestMapping(path = "/cortana",
 produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
 consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-
-
 public class CortanaControllerRest {
 
-	private ControllerDatasets<LancamentosSemanais, String> datasetsemanal;
-	private ControllerDatasets<LancamentosQuinzenais, String> datasetquinzena;
-	private RulesPopUp rules;
+	@Autowired
+	private LancamentosSemanaisController datasetsemanal;
 
-	public CortanaControllerRest() {
-		this.datasetsemanal = new LancamentosSemanaisController();
-		this.datasetquinzena = new LancamentosQuinzenaisController();
-		this.rules = new RulesController();
+	@Autowired
+	private LancamentosQuinzenaisController datasetquinzena;
+
+	@Autowired
+	private RulesController rules;
+
+	@PostConstruct
+	private void getDBHistorico() {
+		BaseHistoricoStartup startup  = new BaseHistoricoStartup();
+		System.out.println("INFO:Startup Cortana Controller Rest.");
+		startup.statupDBHistorico();
 	}
 
 	@GetMapping("/test")
@@ -65,7 +71,6 @@ public class CortanaControllerRest {
 		return this.datasetquinzena.getDatset(hist.getConta());
 	}
 
-
 	@PostMapping("/popUP")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
@@ -73,7 +78,7 @@ public class CortanaControllerRest {
 
 		MensagemPOPUP showRules = rules.showRules(ouput);
 		return showRules;
-		
+
 	} 
 
 }

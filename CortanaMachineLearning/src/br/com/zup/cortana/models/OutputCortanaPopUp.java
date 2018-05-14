@@ -3,7 +3,6 @@ package br.com.zup.cortana.models;
 import com.google.gson.Gson;
 
 public class OutputCortanaPopUp {
-
 	
 	private String nome;
 	private String conta;

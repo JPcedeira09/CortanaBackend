@@ -2,16 +2,16 @@ package br.com.zup.controller.db;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
 import br.com.zup.controller.db.dao.CRUDImplementacao;
 import br.com.zup.models.Conta;
+import br.com.zup.utils.ConnectionFactoryJPA;
 
 public class ContaDAO extends CRUDImplementacao<Conta, Integer> {
-
-	public ContaDAO(EntityManager manager) {
-		super(Conta.class, manager);
-	}
+	
+	public ContaDAO() {
+		super(Conta.class, ConnectionFactoryJPA.getEntityManager());
+		}
+	
 	
 	@Override
 	public void delete(Conta objeto) {
