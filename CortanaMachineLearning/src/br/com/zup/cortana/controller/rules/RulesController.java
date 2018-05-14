@@ -34,13 +34,12 @@ public class RulesController implements RulesPopUp{
 		System.out.println("INFO:Começou a usar o RulesControllerPositive.");
 	}
 
-	/*public static void main(String[] args) {
-
+	public static void main(String[] args) {
 		RulesController rulesController = new RulesController();
 		System.out.println("---------------------------------------------------------------------------------------");
 		rulesController.postGastosResult("10010479");
 		rulesController.postRecebimentosResult("10010479");
-	}*/
+	}
 	
 	public static Long postGastosResult(String conta) {
 
