@@ -21,6 +21,8 @@ import br.com.zup.cortana.models.codec.DataSetCodec;
 public class MongoDBCortana {
 
 
+	private MongoClient cliente;
+
 	/**
 	 * 
 	 * @param nomeCollection
@@ -38,7 +40,7 @@ public class MongoDBCortana {
 	    MongoClientOptions options = MongoClientOptions.builder().codecRegistry(registro).build();
 
 	    
-	    MongoClient cliente = new MongoClient("localhost", options);
+	    cliente = new MongoClient("localhost", options);
 		MongoDatabase database =  cliente.getDatabase("cortana");
 		MongoCollection<Document> collection = database.getCollection(nomeCollection);
 		
@@ -62,8 +64,8 @@ public class MongoDBCortana {
 	    MongoClientOptions options = MongoClientOptions.builder().codecRegistry(registro).build();
 
 	    
-	    MongoClient cliente2 = new MongoClient("localhost:27017", options);
-		MongoDatabase database =  cliente2.getDatabase("cortana");
+	    cliente = new MongoClient("localhost:27017", options);
+		MongoDatabase database =  cliente.getDatabase("cortana");
 		MongoCollection<DataSet> collection = database.getCollection(nomeCollection, DataSet.class);
 		
 		return collection;

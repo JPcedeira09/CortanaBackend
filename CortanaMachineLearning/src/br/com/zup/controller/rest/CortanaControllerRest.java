@@ -2,8 +2,6 @@ package br.com.zup.controller.rest;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.zup.controller.db.LancamentosQuinzenaisController;
 import br.com.zup.controller.db.LancamentosSemanaisController;
-import br.com.zup.controller.db.startup.BaseHistoricoStartup;
 import br.com.zup.cortana.controller.rules.RulesController;
 import br.com.zup.cortana.models.LancamentosQuinzenais;
 import br.com.zup.cortana.models.MensagemPOPUP;
@@ -30,7 +27,16 @@ import br.com.zup.models.LancamentosSemanais;
 produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
 consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class CortanaControllerRest {
-
+	
+//	public CortanaControllerRest() {
+//		super();
+//		System.out.println("INFO:Startup Cortana Controller Rest.");
+//		startup.statupDBHistorico();
+//	}
+//	
+//	@Autowired
+//	private BaseHistoricoStartup startup ;
+	
 	@Autowired
 	private LancamentosSemanaisController datasetsemanal;
 
@@ -39,13 +45,6 @@ public class CortanaControllerRest {
 
 	@Autowired
 	private RulesController rules;
-
-	@PostConstruct
-	private void getDBHistorico() {
-		BaseHistoricoStartup startup  = new BaseHistoricoStartup();
-		System.out.println("INFO:Startup Cortana Controller Rest.");
-		startup.statupDBHistorico();
-	}
 
 	@GetMapping("/test")
 	@ResponseBody
@@ -60,7 +59,7 @@ public class CortanaControllerRest {
 	@ResponseBody
 	public List<LancamentosSemanais> getHistoricoSemanal(@RequestBody LancamentosSemanais hist){
 		System.out.println(hist.toJSON());
-		return this.datasetsemanal.getDatset(hist.getConta());
+		return datasetsemanal.getDatset(hist.getConta());
 	}
 
 	@PostMapping("/quinzenal")
@@ -68,17 +67,15 @@ public class CortanaControllerRest {
 	@ResponseBody
 	public List<LancamentosQuinzenais> getHistoricoquinzenal(@RequestBody LancamentosQuinzenais hist){
 		System.out.println(hist.toJSON());
-		return this.datasetquinzena.getDatset(hist.getConta());
+		return datasetquinzena.getDatset(hist.getConta());
 	}
 
 	@PostMapping("/popUP")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public MensagemPOPUP getPopUp(@RequestBody OutputCortanaPopUp ouput){
-
 		MensagemPOPUP showRules = rules.showRules(ouput);
 		return showRules;
-
 	} 
 
 }

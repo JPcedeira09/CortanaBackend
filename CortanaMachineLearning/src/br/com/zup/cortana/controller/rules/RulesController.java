@@ -32,14 +32,19 @@ public class RulesController implements RulesPopUp{
 
 	@Autowired
 	private PopUpEstavel estavelPopup;
+	
 	@Autowired
 	private PopUpCobre cobrePopup;
+	
 	@Autowired
 	private PopUpPositivo positivoPopup;
+	
 	@Autowired
 	private PopUpNegativo negativoPopup;
+	
 	@Autowired
 	private GastosClient gastosClient;
+	
 	@Autowired
 	private RecebimentosClient recebimentosClient;
 	

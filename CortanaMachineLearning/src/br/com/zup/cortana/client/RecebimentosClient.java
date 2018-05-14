@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import br.com.zup.controller.db.dao.MachineDAORecebimentos;
 
 @Repository
-public class RecebimentosClient extends CortanaClient{
+public class RecebimentosClient implements CortanaClient{
 
 	@Autowired
 	private MachineDAORecebimentos daoR;

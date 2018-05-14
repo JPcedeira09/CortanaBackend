@@ -15,10 +15,10 @@ import br.com.zup.utils.ConnectionFactoryJPA;
 @Repository
 public class MachineDAOGastos implements MachineDAO{
 
-	private EntityManager manager;
+	private EntityManager manager = ConnectionFactoryJPA.getEntityManager();
 
 	public MachineDAOGastos() {
-		this.manager = ConnectionFactoryJPA.getEntityManager();
+		System.out.println("INFO:Começou a usar o LancamentosSemanaisController.");
 	}
 
 	@Override
@@ -57,7 +57,6 @@ public class MachineDAOGastos implements MachineDAO{
 		System.out.println(queryR.getResultList() + " \n");
 		LongsR = queryR.getResultList();
 
-
 		input1Gastos.setValor_gasto_mes(LongsG.get(0));
 		input1Gastos.setValor_gasto_mes_anterior(LongsG.get(1));
 		input1Gastos.setValor_gasto_mes2(LongsG.get(2));
@@ -79,11 +78,11 @@ public class MachineDAOGastos implements MachineDAO{
 		return string;
 	}
 
-	/*
+	
 	public static void main(String[] args) {
 		MachineDAOGastos machineDAOGastos = new MachineDAOGastos();
 		machineDAOGastos.getDBhistoco("10010479");
-	}*/
+	}
 
 }
 

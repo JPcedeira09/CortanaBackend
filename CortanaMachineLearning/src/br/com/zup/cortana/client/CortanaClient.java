@@ -1,7 +1,7 @@
 package br.com.zup.cortana.client;
 
-public abstract class CortanaClient {
+public interface  CortanaClient {
 
-	public abstract String postCortana(String conta);
+	public String postCortana(String conta);
 	
 }

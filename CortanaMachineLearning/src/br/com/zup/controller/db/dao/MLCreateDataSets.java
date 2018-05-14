@@ -23,6 +23,7 @@ public class MLCreateDataSets {
 		this.connection = ConnectionFactory.getConnection();
 		System.out.println(connection.toString());
 	}
+	
 	public List<LancamentosSemanais> geradorGanhosSemanais(String nr_cnta_crrt) {
 
 		List<LancamentosSemanais> historicoList = new ArrayList<LancamentosSemanais>();

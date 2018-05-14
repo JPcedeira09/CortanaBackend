@@ -38,7 +38,7 @@ public class MachineDAORecebimentos implements MachineDAO{
 		try {
 
 			// QUERY PARA RECEBIMENTOS
-			PreparedStatement statement = connection.prepareStatement(queryRecebimentos);
+			PreparedStatement statement = this.connection.prepareStatement(queryRecebimentos);
 			statement.setString(1, conta);
 			ResultSet set = statement.executeQuery();
 			while(set.next()) {

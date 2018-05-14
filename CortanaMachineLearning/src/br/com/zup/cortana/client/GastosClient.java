@@ -7,7 +7,7 @@ import br.com.zup.controller.db.dao.MachineDAOGastos;
 
 
 @Repository
-public class GastosClient extends CortanaClient{
+public class GastosClient implements CortanaClient{
 	
 	@Autowired
 	private MachineDAOGastos daoG;
