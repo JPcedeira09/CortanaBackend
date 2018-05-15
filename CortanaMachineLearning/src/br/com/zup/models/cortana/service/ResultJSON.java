@@ -1,4 +1,4 @@
-package br.com.zup.models;
+package br.com.zup.models.cortana.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-import br.com.zup.cortana.models.Results;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({

@@ -1,4 +1,4 @@
-package br.com.zup.controller.db.dao;
+package br.com.zup.cortana.controller.db.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import br.com.zup.cortana.interfaces.db.MachineDAO;
-import br.com.zup.cortana.models.Input1Recebimentos;
+import br.com.zup.models.cortana.service.Input1Recebimentos;
 import br.com.zup.utils.ConnectionFactory;
 
 @Repository

@@ -1,4 +1,4 @@
-package br.com.zup.cortana.models;
+package br.com.zup.models.cortana.entities;
 
 import org.bson.types.ObjectId;
 

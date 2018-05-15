@@ -11,7 +11,7 @@ import org.bson.codecs.DecoderContext;
 import org.bson.codecs.EncoderContext;
 import org.bson.types.ObjectId;
 
-import br.com.zup.cortana.models.DataSet;
+import br.com.zup.models.cortana.entities.DataSet;
 
 public class DataSetCodec implements CollectibleCodec<DataSet> {
 

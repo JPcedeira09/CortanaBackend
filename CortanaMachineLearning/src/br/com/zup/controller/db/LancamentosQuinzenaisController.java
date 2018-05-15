@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import br.com.zup.controller.db.dao.MLCreateDataSets;
+import br.com.zup.cortana.controller.db.dao.MLCreateDataSets;
 import br.com.zup.cortana.interfaces.db.ControllerDatasets;
-import br.com.zup.cortana.models.LancamentosQuinzenais;
+import br.com.zup.models.LancamentosQuinzenais;
 
 @Repository
 public class LancamentosQuinzenaisController implements ControllerDatasets<LancamentosQuinzenais, String> {

@@ -1,4 +1,4 @@
-package br.com.zup.controller.db.dao;
+package br.com.zup.cortana.controller.db.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.zup.cortana.models.LancamentosQuinzenais;
+import br.com.zup.models.LancamentosQuinzenais;
 import br.com.zup.models.LancamentosSemanais;
 import br.com.zup.utils.ConnectionFactory;
 

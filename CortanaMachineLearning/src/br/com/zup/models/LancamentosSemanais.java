@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 
-
-
 public class LancamentosSemanais {
 
 	private String conta;

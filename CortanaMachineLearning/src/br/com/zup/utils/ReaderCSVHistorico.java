@@ -16,7 +16,7 @@ import javax.persistence.EntityManager;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.zup.models.HistoricoBancario;
+import br.com.zup.models.cortana.entities.HistoricoBancario;
 
 /**
  * 

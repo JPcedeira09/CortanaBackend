@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.zup.controller.db.dao.CRUDImplementacao;
+import br.com.zup.cortana.controller.db.dao.CRUDImplementacao;
 import br.com.zup.models.Conta;
 
 

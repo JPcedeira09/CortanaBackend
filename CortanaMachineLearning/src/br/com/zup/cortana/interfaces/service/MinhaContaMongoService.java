@@ -1,7 +1,7 @@
 package br.com.zup.cortana.interfaces.service;
 
-import br.com.zup.cortana.models.Meta;
-import br.com.zup.cortana.models.Perfil;
+import br.com.zup.models.Meta;
+import br.com.zup.models.Perfil;
 
 public interface MinhaContaMongoService {
 

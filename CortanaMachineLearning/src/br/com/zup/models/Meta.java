@@ -1,4 +1,4 @@
-package br.com.zup.cortana.models;
+package br.com.zup.models;
 
 public class Meta {
 

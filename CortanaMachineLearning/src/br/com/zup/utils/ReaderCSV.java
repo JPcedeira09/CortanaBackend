@@ -13,7 +13,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.util.JSON;
 
-import br.com.zup.cortana.models.DataSet;
+import br.com.zup.models.cortana.entities.DataSet;
 
 /**
  * 

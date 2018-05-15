@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.zup.controller.db.LancamentosQuinzenaisController;
 import br.com.zup.controller.db.LancamentosSemanaisController;
 import br.com.zup.cortana.controller.rules.RulesController;
-import br.com.zup.cortana.models.LancamentosQuinzenais;
-import br.com.zup.cortana.models.MensagemPOPUP;
-import br.com.zup.cortana.models.OutputCortanaPopUp;
 import br.com.zup.models.Conta;
+import br.com.zup.models.LancamentosQuinzenais;
 import br.com.zup.models.LancamentosSemanais;
+import br.com.zup.models.cortana.service.MensagemPOPUP;
+import br.com.zup.models.cortana.service.OutputCortanaPopUp;
 
 @RestController
 @RequestMapping(path = "/cortana",

@@ -1,4 +1,4 @@
-package br.com.zup.cortana.models;
+package br.com.zup.models.cortana.service;
 
 import java.util.HashMap;
 import java.util.List;

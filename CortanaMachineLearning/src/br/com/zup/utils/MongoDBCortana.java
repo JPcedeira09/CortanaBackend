@@ -10,8 +10,8 @@ import com.mongodb.MongoClientOptions;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
-import br.com.zup.cortana.models.DataSet;
 import br.com.zup.cortana.models.codec.DataSetCodec;
+import br.com.zup.models.cortana.entities.DataSet;
 
 /**
  * 

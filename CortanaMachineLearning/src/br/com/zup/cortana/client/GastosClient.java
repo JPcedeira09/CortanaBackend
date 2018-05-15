@@ -3,7 +3,7 @@ package br.com.zup.cortana.client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import br.com.zup.controller.db.dao.MachineDAOGastos;
+import br.com.zup.cortana.controller.db.dao.MachineDAOGastos;
 
 
 @Repository

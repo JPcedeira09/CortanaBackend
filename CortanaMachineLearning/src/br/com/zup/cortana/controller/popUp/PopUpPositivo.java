@@ -3,7 +3,7 @@ package br.com.zup.cortana.controller.popUp;
 import org.springframework.stereotype.Repository;
 
 import br.com.zup.cortana.interfaces.service.PopUp;
-import br.com.zup.cortana.models.OutputCortanaPopUp;
+import br.com.zup.models.cortana.service.OutputCortanaPopUp;
 
 @Repository
 public class PopUpPositivo implements PopUp{

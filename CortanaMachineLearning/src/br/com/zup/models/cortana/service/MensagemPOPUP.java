@@ -1,4 +1,4 @@
-package br.com.zup.cortana.models;
+package br.com.zup.models.cortana.service;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

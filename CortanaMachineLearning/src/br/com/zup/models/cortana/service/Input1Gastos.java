@@ -1,4 +1,4 @@
-package br.com.zup.cortana.models;
+package br.com.zup.models.cortana.service;
 
 import com.google.gson.Gson;
 

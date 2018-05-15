@@ -1,7 +1,7 @@
 package br.com.zup.cortana.interfaces.db;
 
-import br.com.zup.cortana.models.MensagemPOPUP;
-import br.com.zup.cortana.models.OutputCortanaPopUp;
+import br.com.zup.models.cortana.service.MensagemPOPUP;
+import br.com.zup.models.cortana.service.OutputCortanaPopUp;
 
 public interface RulesPopUp {
 

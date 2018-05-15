@@ -1,4 +1,4 @@
-package br.com.zup.controller.db.dao;
+package br.com.zup.cortana.controller.db.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import br.com.zup.cortana.interfaces.db.MachineDAO;
-import br.com.zup.cortana.models.Input1Gastos;
+import br.com.zup.models.cortana.service.Input1Gastos;
 import br.com.zup.utils.ConnectionFactoryJPA;
 
 @Repository

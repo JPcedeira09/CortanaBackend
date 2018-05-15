@@ -1,4 +1,4 @@
-package br.com.zup.controller.db.dao;
+package br.com.zup.cortana.controller.db.dao;
 
 import java.util.List;
 

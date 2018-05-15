@@ -1,4 +1,4 @@
-package br.com.zup.models;
+package br.com.zup.models.cortana.entities;
 
 import java.util.Calendar;
 
