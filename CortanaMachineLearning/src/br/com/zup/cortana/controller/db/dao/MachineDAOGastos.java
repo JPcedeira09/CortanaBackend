@@ -18,7 +18,7 @@ public class MachineDAOGastos implements MachineDAO{
 	private EntityManager manager = ConnectionFactoryJPA.getEntityManager();
 
 	public MachineDAOGastos() {
-		System.out.println("INFO:Começou a usar o LancamentosSemanaisController.");
+		System.out.println("INFO:Começou a usar o MachineDAOGastos.");
 	}
 
 	@Override
@@ -77,13 +77,12 @@ public class MachineDAOGastos implements MachineDAO{
 
 		return string;
 	}
-
 	
 	public static void main(String[] args) {
 		MachineDAOGastos machineDAOGastos = new MachineDAOGastos();
 		machineDAOGastos.getDBhistoco("10010479");
 	}
-
+	
 }
 
 /*
