@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>ControllerRecebimentos.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package br.com.zup.cortana.client.controller;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.BufferedReader;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.InputStreamReader;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.OutputStream;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.net.HttpURLConnection;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.net.MalformedURLException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.net.URL;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.springframework.beans.factory.annotation.Autowired;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.springframework.stereotype.Repository;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.fasterxml.jackson.core.type.TypeReference;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.fasterxml.jackson.databind.ObjectMapper;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import br.com.zup.cortana.client.RecebimentosClient;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import br.com.zup.models.cortana.service.ResultJSON;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>@Repository</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_21'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>public class ControllerRecebimentos {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_22'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Autowired</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_24'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private RecebimentosClient recebimentosClient;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_26'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public Long postRecebimentosResult(String conta) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_27'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;try {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_29'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;URL url = new URL(&#34;https://ussouthcentral.services.azureml.net/workspaces/36c116b8d1d94afda891fa44ab452961/services/55d9d1f69a0a4831b165bba029cda7b9/execute?api-version=2.0&#38;format=swagger&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_30'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_31'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;HttpURLConnection conn = (HttpURLConnection) url.openConnection();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_32'/>
+32
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_32'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/net/HttpURLConnection::setDoOutput &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;conn.setDoOutput(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_33'/>
+33
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_33'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/net/HttpURLConnection::setRequestMethod &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;conn.setRequestMethod(&#34;POST&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_34'/>
+34
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_34'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/net/HttpURLConnection::setRequestProperty &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;conn.setRequestProperty(&#34;Content-Type&#34;, &#34;application/json&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_35'/>
+35
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_35'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/net/HttpURLConnection::setRequestProperty &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;conn.setRequestProperty(&#34;Accept&#34;, &#34;application/json&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_36'/>
+36
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_36'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/net/HttpURLConnection::setRequestProperty &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;conn.setRequestProperty(&#34;Authorization&#34;, &#34;Bearer QV8sfSYAztmhx6l6XP5+qGUxzQYmXvTOo8ln7AaB1F3sKrW05zCYzaUxYrOx/27AEljBUYGLJTuuyB5pBcGuew==&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_37'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_38'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;String postCortana = recebimentosClient.postCortana(conta);&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_39'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;OutputStream os = conn.getOutputStream();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_40'/>
+40
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_40'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/io/OutputStream::write &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;os.write(postCortana.getBytes());</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_41'/>
+41
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_41'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/io/OutputStream::flush &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;os.flush();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_42'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;BufferedReader br = new BufferedReader(new InputStreamReader(</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_43'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;&#9;&#9;(conn.getInputStream())));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_44'/>
+44
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_44'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/io/PrintStream::println &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;System.out.println(&#34;Output from Server .... \n&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_45'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_46'/>
+46
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_46'>1</a>
+<span>
+
+1. postRecebimentosResult : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_47'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;&#9;throw new RuntimeException(&#34;Failed : HTTP error code : &#34;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_48'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;&#9;&#9;&#9;+ conn.getResponseCode());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_49'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_50'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_51'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;ObjectMapper objectMapper = new ObjectMapper();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_52'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;ResultJSON results1 = objectMapper.readValue(br.readLine(), new TypeReference&#60;ResultJSON&#62;(){});</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_53'/>
+53
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_53'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/io/PrintStream::println &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;System.out.println(&#34;Results .... RECEBIMENTOS \n&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_54'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;String scoredLabels = results1.getResults().getOutput1().get(0).getScoredLabels();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_55'/>
+55
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_55'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/io/PrintStream::println &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;System.out.println(&#34;SCORE LABELS PURO:&#34;+scoredLabels);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_56'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_57'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;//report.reportAcessos();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_58'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;Long score = (long) Double.parseDouble(scoredLabels);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_59'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_60'/>
+60
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_60'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/net/HttpURLConnection::disconnect &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;conn.disconnect();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_61'/>
+61
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_61'>1</a>
+<span>
+
+1. postRecebimentosResult : mutated return of Object value for br/com/zup/cortana/client/controller/ControllerRecebimentos::postRecebimentosResult to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;return score;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_62'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_63'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;} catch (MalformedURLException e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_64'/>
+64
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_64'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/net/MalformedURLException::printStackTrace &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;e.printStackTrace();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_65'/>
+65
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_65'>1</a>
+<span>
+
+1. postRecebimentosResult : mutated return of Object value for br/com/zup/cortana/client/controller/ControllerRecebimentos::postRecebimentosResult to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;return (long) 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_66'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;} catch (IOException e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_67'/>
+67
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_67'>1</a>
+<span>
+
+1. postRecebimentosResult : removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;e.printStackTrace();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_68'/>
+68
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_68'>1</a>
+<span>
+
+1. postRecebimentosResult : mutated return of Object value for br/com/zup/cortana/client/controller/ControllerRecebimentos::postRecebimentosResult to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;return (long) 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_69'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_70'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_71'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147a2388_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_72'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_32'>32</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_32'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/net/HttpURLConnection::setDoOutput &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_33'>33</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_33'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/net/HttpURLConnection::setRequestMethod &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_34'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/net/HttpURLConnection::setRequestProperty &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_35'>35</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_35'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/net/HttpURLConnection::setRequestProperty &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_36'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/net/HttpURLConnection::setRequestProperty &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_40'>40</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_40'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/io/OutputStream::write &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_41'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/io/OutputStream::flush &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_44'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_46'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_53'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_55'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_60'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/net/HttpURLConnection::disconnect &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_61'>61</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_61'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> mutated return of Object value for br/com/zup/cortana/client/controller/ControllerRecebimentos::postRecebimentosResult to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_64'>64</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_64'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/net/MalformedURLException::printStackTrace &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_65'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> mutated return of Object value for br/com/zup/cortana/client/controller/ControllerRecebimentos::postRecebimentosResult to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_67'>67</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_67'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147a2388_68'>68</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147a2388_68'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>postRecebimentosResult<br/><b>Killed by : </b>none</span></span> mutated return of Object value for br/com/zup/cortana/client/controller/ControllerRecebimentos::postRecebimentosResult to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.3.2
+
+</body>
+</html>

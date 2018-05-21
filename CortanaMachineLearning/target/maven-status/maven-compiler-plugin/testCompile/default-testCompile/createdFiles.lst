@@ -1,0 +1,4 @@
+br\com\zup\controller\rest\CortanaControllerRestTest.class
+br\com\zup\cortana\controller\db\dao\MachineDAOGastosTest.class
+br\com\zup\cortana\client\controller\ControlerGastosTest.class
+br\com\zup\cortana\controller\rules\RulesControllerTest.class

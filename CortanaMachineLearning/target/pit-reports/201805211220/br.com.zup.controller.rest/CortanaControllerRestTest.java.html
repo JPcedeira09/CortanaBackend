@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>CortanaControllerRestTest.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package br.com.zup.controller.rest;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static org.mockito.Matchers.any;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static org.mockito.Mockito.times;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static org.mockito.Mockito.verify;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static org.mockito.Mockito.verifyNoMoreInteractions;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static org.mockito.Mockito.when;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.junit.Before;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.junit.Test;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.mockito.InjectMocks;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.mockito.Mock;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.mockito.MockitoAnnotations;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.springframework.http.MediaType;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.springframework.test.web.servlet.MockMvc;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.springframework.test.web.servlet.setup.MockMvcBuilders;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.google.gson.Gson;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_21'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_22'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import br.com.zup.controller.db.LancamentosQuinzenaisController;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import br.com.zup.controller.db.LancamentosSemanaisController;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_24'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import br.com.zup.cortana.controller.rules.RulesController;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import br.com.zup.models.cortana.service.OutputCortanaPopUp;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_26'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_27'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public class CortanaControllerRestTest {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_29'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private MockMvc mockMvc;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_30'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_31'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Mock</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private LancamentosSemanaisController datasetsemanal;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_33'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_34'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Mock</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_35'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private LancamentosQuinzenaisController datasetquinzena;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_36'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_37'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Mock</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_38'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private RulesController rules;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_39'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_40'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@InjectMocks</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_41'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private CortanaControllerRest cortanaControllerRest;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_42'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_43'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Before</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_44'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void init() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_45'>1</a>
+<span>
+
+1. init : removed call to org/mockito/MockitoAnnotations::initMocks &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;MockitoAnnotations.initMocks(this);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_46'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;mockMvc = MockMvcBuilders.standaloneSetup(cortanaControllerRest).build();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_47'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_48'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_49'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Test</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_50'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void getPopUpSuccessTest() throws Exception {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_51'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;// User user = new User(&#34;Arya Stark&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_52'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;when(rules.showRules(any(OutputCortanaPopUp.class))).thenReturn(null);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_53'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;// doNothing().when(userService).create(user);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_54'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;OutputCortanaPopUp ouput = new OutputCortanaPopUp();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_55'/>
+55
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_55'>1</a>
+<span>
+
+1. getPopUpSuccessTest : removed call to br/com/zup/models/cortana/service/OutputCortanaPopUp::setNome &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;ouput.setNome(&#34;Juca&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_56'/>
+56
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_56'>1</a>
+<span>
+
+1. getPopUpSuccessTest : removed call to br/com/zup/models/cortana/service/OutputCortanaPopUp::setConta &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;ouput.setConta(&#34;123&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_57'/>
+57
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_57'>1</a>
+<span>
+
+1. getPopUpSuccessTest : removed call to br/com/zup/models/cortana/service/OutputCortanaPopUp::setSaldoMesAnterior &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;ouput.setSaldoMesAnterior(1000L);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_58'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;mockMvc.perform(post(&#34;/cortana/popUP&#34;)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_59'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;.contentType(MediaType.APPLICATION_JSON)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_60'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;.content(new Gson().toJson(ouput)))</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_61'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;.andExpect(status().isOk());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_62'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//&#9;&#9;&#9;&#9;.andExpect(header().string(&#34;location&#34;, </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_63'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//&#9;&#9;&#9;&#9;&#9;&#9;containsString(&#34;http://localhost/CortanaMachineLearning/cortana/popUP&#34;)));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_64'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//&#9;&#9;mockMvc.perform(requestBuilder);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_65'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;verify(rules, times(1)).showRules(any(OutputCortanaPopUp.class));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_66'/>
+66
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_66'>1</a>
+<span>
+
+1. getPopUpSuccessTest : removed call to org/mockito/Mockito::verifyNoMoreInteractions &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;verifyNoMoreInteractions(rules);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_67'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_68'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_69'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>init<br/><b>Killed by : </b>br.com.zup.controller.rest.CortanaControllerRestTest.getPopUpSuccessTest(br.com.zup.controller.rest.CortanaControllerRestTest)</span></span> removed call to org/mockito/MockitoAnnotations::initMocks &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_55'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPopUpSuccessTest<br/><b>Killed by : </b>none</span></span> removed call to br/com/zup/models/cortana/service/OutputCortanaPopUp::setNome &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_56'>56</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_56'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPopUpSuccessTest<br/><b>Killed by : </b>none</span></span> removed call to br/com/zup/models/cortana/service/OutputCortanaPopUp::setConta &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_57'>57</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_57'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPopUpSuccessTest<br/><b>Killed by : </b>none</span></span> removed call to br/com/zup/models/cortana/service/OutputCortanaPopUp::setSaldoMesAnterior &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@4b4baf0d_66'>66</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@4b4baf0d_66'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPopUpSuccessTest<br/><b>Killed by : </b>none</span></span> removed call to org/mockito/Mockito::verifyNoMoreInteractions &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>br.com.zup.controller.rest.CortanaControllerRestTest.getPopUpSuccessTest(br.com.zup.controller.rest.CortanaControllerRestTest) (1901 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.3.2
+
+</body>
+</html>
