@@ -62,6 +62,7 @@ public class Input1ClassificacaoPerfil {
 	public Input1ClassificacaoPerfil() {
 		super();
 	}
+
 	
 	public String toJSON() {
 		return new Gson().toJson(this);
