@@ -64,7 +64,6 @@ public class PredictModels {
 		List<Long> resultList = queryG.getResultList();
 		if(resultList.size() >= 8) {
 		LongsG = queryG.setMaxResults(8).getResultList();
-		//System.out.println(queryG.getResultList()+ " \n");
 		
 		input1Gastos.setValor_gasto_mesAtual(LongsG.get(0));
 		input1Gastos.setValor_gasto_mes(LongsG.get(1));
